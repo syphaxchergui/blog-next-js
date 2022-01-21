@@ -11,8 +11,14 @@ export default function BlogPage({ title, date, content }) {
       </Head>
 
       <main>
-        <h1>{title}</h1>
-        <p>{content}</p>
+        <div className='mt-6 border-b-2 mb-4'>
+          <h1 className='text-3xl mb-2 text-[#aee8ff] font-semibold'>
+            {title}
+          </h1>
+          <p className='text-grey-400 mb-1 font-space  text-s'>• {date} •</p>
+        </div>
+
+        <p className='text-justify'>{content}</p>
       </main>
     </div>
   );

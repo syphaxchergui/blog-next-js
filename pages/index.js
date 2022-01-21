@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
+
+import BlogPost from "../components/blogPost";
 import { blogPosts } from "../lib/data";
 
 export default function Home() {
@@ -11,21 +12,15 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main>
-        <h1>My Blog</h1>
-      </main>
-
       <div>
         {blogPosts.map((item) => (
-          <div key={item.slug}>
-            <div>
-              <Link href={`blog/${item.slug}`}>
-                <a>{item.title}</a>
-              </Link>
-            </div>
-            <div>{item.date}</div>
-            <div>{item.content}</div>
-          </div>
+          <BlogPost
+            key={item.slug}
+            slug={item.slug}
+            title={item.title}
+            content={item.content}
+            date={item.date}
+          />
         ))}
       </div>
     </div>
