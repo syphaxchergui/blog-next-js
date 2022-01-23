@@ -1,6 +1,6 @@
 # Blog App
 
-This is a simple blog app using next.js
+This is a simple blog app using next.js, TailwindCSS and markdown.
 
 ## Getting Started
 
