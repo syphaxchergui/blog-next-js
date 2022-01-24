@@ -1,7 +1,6 @@
 import Head from "next/head";
-
 import BlogPost from "../components/blogPost";
-import { blogPosts } from "../lib/data";
+// import { blogPosts } from "../lib/data";
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       </Head>
 
       <div>
-        {blogPosts.map((item) => (
+        {/* {blogPosts.map((item) => (
           <BlogPost
             key={item.slug}
             slug={item.slug}
@@ -21,7 +20,7 @@ export default function Home() {
             content={item.content}
             date={item.date}
           />
-        ))}
+        ))} */}
       </div>
     </div>
   );
