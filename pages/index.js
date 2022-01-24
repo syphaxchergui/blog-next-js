@@ -1,8 +1,8 @@
 import Head from "next/head";
 import BlogPost from "../components/blogPost";
-// import { blogPosts } from "../lib/data";
+import { getPostSlugs } from "../lib/data";
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <div>
       <Head>
@@ -12,16 +12,25 @@ export default function Home() {
       </Head>
 
       <div>
-        {/* {blogPosts.map((item) => (
+        {data.map((item) => (
           <BlogPost
             key={item.slug}
             slug={item.slug}
-            title={item.title}
+            title={item.data.title}
             content={item.content}
-            date={item.date}
+            date={item.data.date}
           />
-        ))} */}
+        ))}
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const data = getPostSlugs();
+  return {
+    props: {
+      data,
+    },
+  };
 }
